@@ -1,0 +1,67 @@
+{{extend 'layout.html'}}
+<style>
+    body{
+        background-color:#FFF;
+        margin:0;
+        padding:0;
+    }
+    body header{
+        background-color:#0275d8;
+        font-family:Arial;
+        width:100%;
+        color:#FFF;
+        font-size: 1.5em;
+        font-weight:bold;
+    }
+    .pcenter{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+ 
+</style>
+
+<body>
+    <header class="text-center">
+        <p class="pcenter">
+            ExFound
+        </p>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="Well">
+                        <form class="form-signin" action={{=URL('menu.html')}} method="POST">
+                        <h3 class="form-signin-header text-center">
+                            Login
+                        </h3>
+                        <div class="form-group">
+                            <input class="form-control" type="email" placeholder="Entre com o email" id="email"></input>
+                        </div>
+                        <br>
+                        <input class="form-control" type="password" placeholder="Entre com a senha" id="senha"></input>
+                        <br>
+                        <button class="btn btn-primary btn-block" id="btnLogar">
+                            Entrar
+                        </button>
+                        <button class="btn btn-warning btn-block" id="btnCriarConta" type="submit">
+                            Ainda não tenho conta
+                        </button>
+                    </form>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <p class="text-center">
+        Desenvolvido por...
+        <br>
+       The Walking Dev
+    </p>
+
+  
+</body>

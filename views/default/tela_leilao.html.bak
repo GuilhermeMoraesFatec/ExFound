@@ -1,0 +1,64 @@
+{{extend 'layout.html'}}
+<style>
+    body{
+        background-color:#FFF;
+        margin:0;
+        padding:0;
+        margin-bottom:100px;
+    }
+    body header{
+        background-color:#0275d8;
+        font-family:Arial;
+        width:100%;
+        color:#FFF;
+        font-size: 1.5em;
+        font-weight:bold;
+    }
+    .pcenter{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .btMod{
+        margin:5px;
+        height:80px;
+        color:#FFF;
+        font-size: 1.0em;
+        font-weight:bold;
+    }
+</style>
+<body>
+    <header class="text-center">
+        <p class="pcenter">
+            ExFound
+        </p>
+    </header>
+    <br>
+    <div class="container-fluid">
+       <div class="jumbotron">
+           <h2 class="text-center">
+               Encotrar Leiloes <br><span class="glyphicon glyphicon-search"></span>
+           </h2>
+       </div>
+       <div class="container">
+             <table class="table table-hover">
+                 <tr>
+                     <th>Id</th>
+                     <th>Leilao</th>
+                     <th>Tempo restante</th>
+                     <th>Acoes</th>
+                 </tr>
+                 {{for i in db().select(db.leilao.ALL):}}
+                 <tr>
+                      <td>{{=i.id}}</td>
+                      <td>{{=i.especialidade}}</td>
+                      <td>{{=i.data_expiracao}}</td>
+                      <td><a class="btn btn-warining" href={{=URL('tela_detalhes_leilao.html?id='+str(i.id))}}>Ver mais</a></td>
+                 </tr>
+                 {{pass}}
+             </table>
+          <a class="btn btn-block btn-primary" href={{=URL('menu.html')}}>MENU</a>
+        </div>
+      
+    </div>
+   
+</body>

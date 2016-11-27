@@ -1,0 +1,85 @@
+{{extend 'layout.html'}}
+<style>
+    body{
+        background-color:#FFF;
+        margin:0;
+        padding:0;
+        z-index:0;
+    }
+    body header{
+        background-color:#0275d8;
+        font-family:Arial;
+        width:100%;
+        color:#FFF;
+        font-size: 1.5em;
+        font-weight:bold;
+        z-index:1;
+    }
+    .pcenter{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .btMod{
+        margin:5px;
+        height:80px;
+        color:#FFF;
+        font-size: 1.0em;
+        font-weight:bold;
+    }
+</style>
+<body>
+    <header class="text-center">
+        <p class="pcenter">
+            ExFound
+        </p>
+    </header>
+    <br>
+    <div class="container-fluid">
+        <form action={{=URL('actionCadLeilao')}} method="POST">
+            <div class="form-group">
+                <label>Local da vistoria:</label>
+                <input class="form-control" type="text" placeholder="Local" name="local"></input>
+            </div>
+            <div class="form-group">
+                 <label>Especialidade requerida:</label>
+                <input class="form-control" type="text" placeholder="Especialidade" name="especialidades"></input>
+            </div>
+            <div class="form-group">
+                 <label>Sugestao de preco:</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                    R$
+                </div>
+                <input class="form-control" type="number" placeholder="Preco sugerido" name="preco_sugerido"></input>
+                </div>
+            </div>
+            <div class="form-group">
+                 <label>Preco minimo (Preco direto):</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                    R$
+                </div>
+                <input class="form-control" type="number" placeholder="Preco minimo" name="preco_minimo"></input>
+                </div>
+            </div>
+            <div class="form-group">
+                 <label>Data limite:</label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                    Date
+                    </div>
+                <input class="form-control" type="date" placeholder="Data de expiracao" name="data_expiracao"></input>
+                </div>
+            </div>
+            <div class="form-group">
+                 <label>Descricao das atividades a serem desenvolvidas:</label>
+                <textarea class="form-control"  placeholder="Descricao do leilao" name="descricao"></textarea>
+            </div>
+            <button class="btn btn-block btn-success" type="submit">
+                Cadastrar leilao
+            </button>
+             <a class="btn btn-block btn-primary" href={{=URL('menu.html')}}>MENU</a>
+        </form>
+    </div>
+<br><br><br><br>
+</body>

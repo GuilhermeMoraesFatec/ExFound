@@ -1,0 +1,57 @@
+{{extend 'layout.html'}}
+<style>
+    body{
+        background-color:#FFF;
+        margin:0;
+        padding:0;
+    }
+    body header{
+        background-color:#0275d8;
+        font-family:Arial;
+        width:100%;
+        color:#FFF;
+        font-size: 1.5em;
+        font-weight:bold;
+    }
+    .pcenter{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .btMod{
+        margin:5px;
+        height:80px;
+        color:#FFF;
+        font-size: 1.0em;
+        font-weight:bold;
+    }
+</style>
+<body>
+    <header class="text-center">
+        <p class="pcenter">
+            ExFound
+        </p>
+    </header>
+    <br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                 <a href={{=URL('cad_leilao.html')}} class="btn btn-block btn-primary btMod pcenter">Cadastrar Leilao</a>
+            </div>
+            <div class="col-md-3">
+                 <a href={{=URL('cad_perito.html')}} class="btn btn-block btn-warning btMod pcenter">Cadastrar Perito</a>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                 <a href={{=URL('tela_consulta.html')}} class="btn btn-block btn-danger btMod">Tela Consulta</a>
+            </div>
+            <div class="col-md-3">
+                 <a href={{=URL('tela_leilao.html')}} class="btn btn-block btn-info btMod">Tela Leilao</a>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</body>

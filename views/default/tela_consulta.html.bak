@@ -1,0 +1,90 @@
+{{extend 'layout.html'}}
+<style>
+    body{
+        background-color:#FFF;
+        margin:0;
+        padding:0;
+    }
+    body header{
+        background-color:#0275d8;
+        font-family:Arial;
+        width:100%;
+        color:#FFF;
+        font-size: 1.5em;
+        font-weight:bold;
+    }
+    .pcenter{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .btMod{
+        margin:5px;
+        height:80px;
+        color:#FFF;
+        font-size: 1.0em;
+        font-weight:bold;
+    }
+    .borda{
+        border:4px solid #93c54b;
+    }
+</style>
+<body>
+    <header class="text-center">
+        <p class="pcenter">
+            ExFound
+        </p>
+    </header>
+    <div class="jumbotron">
+        <h2 class="text-center">
+            Tela Consulta
+        </h2>
+        <div class="container-fluid">
+       <form action={{=URL('tela_consulta.html')}} method="POST">
+           <div class="form-group">
+               <div class="row">
+                   <div class="col-md-6">
+                       <select class="form-control" name="Q1">
+                           <option value="leiloes">LEILOES</option>
+                           <option value="profissionais">PROFISSIONAIS</option>
+                       </select>
+                   </div>
+                   <div class="col-md-6">
+                       <select class="form-control" name="Q2">
+                           <option value="local">LOCALIZACAO</option>
+                           <option value="especialidade">ESPECIALIDADE</option>
+                           <option value="data_expiracao">DATA</option>
+                       </select>
+                   </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="B" name="Q3">
+                             <span class="input-group-btn">
+                                 <button class="btn btn-success borda" type="submit">Procurar</button>
+                             </span>
+                        </div>
+                    </div>
+                    
+                </div>
+               
+               </div>
+           </div>
+        </form>
+    </div>
+    </div>
+    <div class="container-fluid">
+       <a class="btn btn-block btn-primary" href={{=URL('menu.html')}}>MENU</a>
+        <table class="table table-bordered table-striped">
+                <tr>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">Acoes</th>
+                </tr>
+                {{for i in db().select(db.login.ALL):}}
+                    <tr>
+                        <td>{{=i.nome}}</td>
+                    </tr>
+                {{pass}}
+        </table>
+</div>
+</body>

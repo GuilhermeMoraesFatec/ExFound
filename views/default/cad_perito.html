@@ -1,0 +1,62 @@
+{{extend 'layout.html'}}
+<style>
+    body{
+        background-color:#FFF;
+        margin:0;
+        padding:0;
+        z-index:0;
+    }
+    body header{
+        background-color:#0275d8;
+        font-family:Arial;
+        width:100%;
+        color:#FFF;
+        font-size: 1.5em;
+        font-weight:bold;
+        z-index:1;
+    }
+    .pcenter{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .btMod{
+        margin:5px;
+        height:80px;
+        color:#FFF;
+        font-size: 1.0em;
+        font-weight:bold;
+    }
+</style>
+<body>
+    <header class="text-center">
+        <p class="pcenter">
+            ExFound
+        </p>
+    </header>
+    <br>
+    <div class="container-fluid">
+        <form action={{=URL("actionCadPerito")}} method="POST">
+            <div class="form-group">
+                <label for="nome">Nome do Perito:</label>
+                <input class="form-control" type="text" placeholder="Nome" name="nome"></input>
+            </div>
+             <div class="form-group">
+                 <label for="especialidade">Especialidade do Perito:</label>
+                <input class="form-control" type="text" placeholder="Especialidade" name="especialidade"></input>
+            </div>
+             <div class="form-group">
+                 <label for="nome">CPF:</label>
+                <input class="form-control" type="number" placeholder="CPF" name="cpf"></input>
+            </div>
+            <div class="form-group">
+                <label for="nome">Endereco:</label>
+                <input class="form-control" type="text" placeholder="Endereco completo" name="endereco com"></input>
+            </div>
+            <br>
+             <button class="btn btn-success btn-block" type="submit">
+                 Cadastrar
+            </button>
+            <a class="btn btn-block btn-primary" href={{=URL('menu.html')}}>MENU</a>
+        </form>
+    </div>
+</body>
